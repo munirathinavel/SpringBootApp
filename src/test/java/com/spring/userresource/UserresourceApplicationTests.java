@@ -20,11 +20,6 @@ public class UserresourceApplicationTests {
 	@Autowired
 	IUserDao userDao;
 
-	/*
-	 * @Test public void contextLoads() {
-	 * System.out.println("Sample testing..."); }
-	 */
-
 	@Test
 	public void createUser() {
 		User user = new User();
@@ -55,6 +50,25 @@ public class UserresourceApplicationTests {
 		User updatedUser = userDao.updateUser(userUpdate);
 
 		Assert.assertEquals(userUpdate.getPinCode(), updatedUser.getPinCode());
+	}
+
+	@Test
+	public void createDelete() {
+
+		User user = new User();
+		user.setfName("CM");
+		user.setlName("Vel");
+		user.setBirthDate("09-AR-2015");
+		user.setPinCode(567897);
+		user.setActive(true);
+
+		User toBeDeleted = userDao.createUser(user);
+
+		user.setId(1);
+
+		User userDeleted = userDao.deleteUser(user);
+
+		Assert.assertEquals(userDeleted.getId(), toBeDeleted.getId());
 	}
 
 }
