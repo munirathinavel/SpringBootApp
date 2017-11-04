@@ -1,14 +1,22 @@
 package com.spring.userresource.vo;
 
-import java.util.Date;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class User {
+
 	int id;
+	@NotEmpty
 	String fName;
+	@NotEmpty
 	String lName;
+	@Email
 	String email;
+	@NotEmpty
 	int pinCode;
+	@NotEmpty
 	String birthDate;
+	@NotEmpty
 	boolean isActive;
 
 	public int getId() {
