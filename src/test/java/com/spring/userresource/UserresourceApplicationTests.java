@@ -53,7 +53,7 @@ public class UserresourceApplicationTests {
 	}
 
 	@Test
-	public void createDelete() {
+	public void deleteUser() {
 
 		User user = new User();
 		user.setfName("CM");
